@@ -21,7 +21,7 @@ FONT_SIZE = 24
 
 # Configuração da tela
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-pygame.display.set_caption("Alinhamento de Sequência")
+pygame.display.set_caption("Ditados Dinâmicos")
 
 font = pygame.font.SysFont("arial", FONT_SIZE)
 input_box_font = pygame.font.SysFont("arial", FONT_SIZE, bold=True)
@@ -62,7 +62,7 @@ def wrap_text(text, font, max_width):
 
     return wrapped_lines
 
-# Função para o alinhamento de sequência (mantendo o código original)
+# Função para o alinhamento de sequência
 def sequence_alignment(x: str, y: str, pxy: int, pgap: int):
     m, n = len(x), len(y)
     dp = np.zeros([m + 1, n + 1], dtype=int)
@@ -128,7 +128,7 @@ def reconstruct_alignment(x, y, M, gap_cost, mismatch_cost):
     return ''.join(alignment_x), ''.join(alignment_y), colored_alignment_x, colored_alignment_y, mismatch_count, gap_count, match_count
 
 # Função para encontrar a frase mais similar
-def find_most_similar(phrases, user_input, gap_cost=50000, mismatch_cost=1):
+def find_most_similar(phrases, user_input, gap_cost=1, mismatch_cost=1):
     min_distance = float('inf')
     most_similar_phrase = ""
     best_alignment = ("", "")
@@ -205,7 +205,7 @@ def main():
                 if input_box_active:
                     if event.key == pygame.K_RETURN:
                         # Quando o usuário pressiona ENTER, encontra a frase mais similar
-                        similar_phrase, distance, alignment, colored_alignment, m_count, g_count, mt_count = find_most_similar(phrases, input_text, gap_cost=5, mismatch_cost=3)
+                        similar_phrase, distance, alignment, colored_alignment, m_count, g_count, mt_count = find_most_similar(phrases, input_text, gap_cost=5, mismatch_cost=3) # Para alterar os custos basta editar essa linha
                         result_text = f"A frase mais semelhante é: '{similar_phrase}' com uma distância de {distance}."
                         
                         # Quebra o texto para caber na tela
