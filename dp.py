@@ -28,7 +28,7 @@ input_box_font = pygame.font.SysFont("arial", FONT_SIZE, bold=True)
 button_font = pygame.font.SysFont("arial", FONT_SIZE, bold=True)
 
 # Função para desenhar texto na tela
-def draw_text(text, x, y, color=BLACK, font=font):
+def draw_text(text, x, y, color=WHITE, font=font):
     text_surface = font.render(text, True, color)
     screen.blit(text_surface, (x, y))
 
@@ -36,7 +36,7 @@ def draw_text(text, x, y, color=BLACK, font=font):
 def draw_input_box(x, y, w, h, text='', active=False):
     color = BLUE if active else GRAY
     pygame.draw.rect(screen, color, (x, y, w, h), 2)
-    draw_text(text, x + 5, y + 5, BLACK, input_box_font)
+    draw_text(text, x + 5, y + 5, WHITE, input_box_font)
 
 # Função para desenhar um botão
 def draw_button(x, y, w, h, text='', active=False):
@@ -179,7 +179,7 @@ def main():
 
     # Loop principal do Pygame
     while True:
-        screen.fill(WHITE)
+        screen.fill(BLACK)
 
         # Eventos do Pygame
         for event in pygame.event.get():
