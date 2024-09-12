@@ -43,4 +43,5 @@ Certifique-se de ter o Python 3.x instalado em sua máquina.
 
 1. Clone o repositório:
    ```bash
-   git clone 
+   git clone https://github.com/projeto-de-algoritmos-2024/PD_Ditados_dinamicos.git
+   cd PD_Ditados_dinamicos
