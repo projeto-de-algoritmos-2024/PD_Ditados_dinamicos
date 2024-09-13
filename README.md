@@ -45,3 +45,7 @@ Certifique-se de ter o Python 3.x instalado em sua máquina.
    ```bash
    git clone https://github.com/projeto-de-algoritmos-2024/PD_Ditados_dinamicos.git
    cd PD_Ditados_dinamicos
+
+## Vídeo da apresentação
+
+[![PD](https://img.youtube.com/vi/phrUdBT1tXI/0.jpg)](https://www.youtube.com/watch?v=phrUdBT1tXI)
